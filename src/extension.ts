@@ -86,8 +86,8 @@ export function activate(context: vscode.ExtensionContext) {
 	});
 
 	const textDocumentChangeListener = vscode.workspace.onDidChangeTextDocument(e => {
-		function filterEmptyLines() {
-			editLocationsHistory = editLocationsHistory.filter(h => !e.document.lineAt(h.line).isEmptyOrWhitespace);
+		function filterEmptyLines(doc: vscode.TextDocument) {
+			editLocationsHistory = editLocationsHistory.filter(h => h.file !== doc.fileName || !doc.lineAt(h.line).isEmptyOrWhitespace);
 		}
 
 		const change = e.contentChanges[e.contentChanges.length - 1];
@@ -103,23 +103,19 @@ export function activate(context: vscode.ExtensionContext) {
 
 		// we removed text so we must adjust the entries after the point of text removal
 		if (change.text === '') {
-			editLocationsHistory.forEach(h => {
-				if (h.line >= end.line) {
-					h.line -= (end.line - start.line);
-				}
+			editLocationsHistory.filter(h => h.file === e.document.fileName && h.line >= end.line).forEach(h => {
+				h.line -= (end.line - start.line);
 			});
-			filterEmptyLines();
+			filterEmptyLines(e.document);
 			return;
 		}
 
 		// we inserted a new line so we must adjust the entries after the new line
 		if (/^[\r\n]*$/.test(change.text)) {
-			editLocationsHistory.forEach(h => {
-				if (h.line > start.line) {
-					h.line++;
-				}
+			editLocationsHistory.filter(h => h.file === e.document.fileName && h.line > start.line).forEach(h => {
+				h.line++;
 			});
-			filterEmptyLines();
+			filterEmptyLines(e.document);
 			return;
 		}
 
@@ -133,7 +129,7 @@ export function activate(context: vscode.ExtensionContext) {
 			// reset the index
 			currentIndex = maxLocationsDefault - 1;
 			// filter out history entries that have an inexistent line number in the active document
-			editLocationsHistory = editLocationsHistory.filter(h => h.line <= e.document.lineCount);
+			editLocationsHistory = editLocationsHistory.filter(h => h.file !== e.document.fileName || h.line <= e.document.lineCount);
 		} else {
 			lastLocation.character = character;
 		}
