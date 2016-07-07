@@ -8,3 +8,7 @@ The following commands, shown below with their shortcuts, are available through 
 ![Command Go to Next Edit Location](assets/next-edit-location.png)
 
 ![Command Clear Edit Locations History](assets/clear-edit-locations.png)
+
+## Changelog
+
+[https://github.com/sadesyllas/edit-locations-history/blob/master/CHANGELOG.md](https://github.com/sadesyllas/edit-locations-history/blob/master/CHANGELOG.md)

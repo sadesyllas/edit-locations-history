@@ -2,7 +2,7 @@
 	"name": "edit-locations-history",
 	"displayName": "edit-locations-history",
 	"description": "Navigation through previous/next edit locations for Visual Studio Code",
-	"version": "0.2.4",
+	"version": "0.2.5",
 	"publisher": "sadesyllas",
 	"license": "GPL-2.0",
 	"engines": {
