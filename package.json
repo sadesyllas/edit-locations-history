@@ -2,7 +2,7 @@
 	"name": "edit-locations-history",
 	"displayName": "edit-locations-history",
 	"description": "Navigation through previous/next edit locations for Visual Studio Code",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"publisher": "sadesyllas",
 	"license": "GPL-2.0",
 	"engines": {
@@ -30,6 +30,7 @@
 			"properties": {
 				"editLocationsHistory.maxLocations": {
 					"type": "integer",
+					"minimum": 2,
 					"default": "1000",
 					"description": "The maximum remembered entries in the Edit Locations History"
 				}

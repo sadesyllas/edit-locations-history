@@ -1,3 +1,5 @@
+v0.2.3 - fix(app): fix configuration contribution in package.json
+
 v0.2.2 - fix(app): specify configuration contribution in package.json
 
 v0.2.1 - fix(app): use 'use strict' directive
