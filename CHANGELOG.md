@@ -1,3 +1,5 @@
+v0.2.2 - fix(app): specify configuration contribution in package.json
+
 v0.2.1 - fix(app): use 'use strict' directive
 
 v0.2.0 - fix(app): filter files when inserting whitespace or deleting
