@@ -3,8 +3,8 @@ Navigation through previous/next edit locations for Visual Studio Code
 
 The following commands, shown below with their shortcuts, are available through the Command Palette:
 
-![Command](assets/previous-edit-location.png "Go to Previous Edit Location")
+![Command Go to Previous Edit Location](assets/previous-edit-location.png)
 
-![Command](assets/next-edit-location.png "Go to Next Edit Location")
+![Command Go to Next Edit Location](assets/next-edit-location.png)
 
-![Command](assets/clear-edit-locations.png "Clear Edit Locations History")
+![Command Clear Edit Locations History](assets/clear-edit-locations.png)

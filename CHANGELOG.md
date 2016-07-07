@@ -1,3 +1,5 @@
+v0.2.4 - fix(README.md): fix markdown of screenshots 
+
 v0.2.3 - fix(app): fix configuration contribution in package.json
 
 v0.2.2 - fix(app): specify configuration contribution in package.json
